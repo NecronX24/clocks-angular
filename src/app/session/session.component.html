@@ -1,0 +1,13 @@
+<div class="inputCard">
+    <h1>{{getTitle()}}</h1>
+    <div *ngFor="let item of getData()">
+        <input placeholder="{{item.label}}" type="{{item.type}}">
+    </div>
+    <button>{{getTitle()}}</button>
+    <p>
+      {{ login ? '¿No tienes una cuenta?' : '¿Ya tienes una cuenta?' }}
+      <a (click)="changePage()">
+        {{ login ? 'Regístrate' : 'Inicia sesión' }}
+      </a>
+    </p>
+</div>
