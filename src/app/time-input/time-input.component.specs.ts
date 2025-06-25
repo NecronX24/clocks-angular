@@ -9,16 +9,33 @@ import { TimeInputComponent } from './time-input.component';
   imports: [CommonModule, FormsModule, TimeInputComponent],
   template: `
     <h2>Control de Hora</h2>
-    <app-time-input (timeUpdated)="onTimeUpdate($event)"></app-time-input>
+    <app-time-input
+        (timeUpdated)="onTimeUpdate($event)"
+        (hourUpdated)="onHourUpdate($event)"
+        (minuteUpdated)="onMinuteUpdate($event)"
+        (secondUpdated)="onSecondUpdate($event)">
+    </app-time-input>
     <p>Hora actual: {{ currentTime }}</p>
   `
 })
 export class TimeInputComponentTest {
   currentTime: string = '';
+  currentHour: string = '';
+  currentMinute: string = '';
+  currentSecond: string = '';
   isUpdating: boolean = true;
 
   onTimeUpdate(time: string) {
     this.currentTime = time;
-    console.log('Hora actualizada:', time);
+  }  
+  onHourUpdate(time: string) {
+    this.currentHour = time;
+  }  
+  onMinuteUpdate(time: string) {
+    this.currentMinute = time;
+  }  
+  onSecondUpdate(time: string) {
+    this.currentSecond = time;
+    console.log(this.currentSecond);
   }
 }

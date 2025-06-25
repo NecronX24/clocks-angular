@@ -17,6 +17,9 @@ export class TimeInputComponent implements OnDestroy {
   private updateInterval: any;
 
   @Output() timeUpdated = new EventEmitter<string>();
+  @Output() hourUpdated = new EventEmitter<string>();
+  @Output() minuteUpdated = new EventEmitter<string>();
+  @Output() secondUpdated = new EventEmitter<string>();
 
   constructor() {
     this.updateCurrentTime();
@@ -64,6 +67,9 @@ export class TimeInputComponent implements OnDestroy {
 
   private emitTime(): void {
     this.timeUpdated.emit(this.getTimeString());
+    this.hourUpdated.emit(this.pad(this.hours))
+    this.minuteUpdated.emit(this.pad(this.minutes))
+    this.secondUpdated.emit(this.pad(this.seconds))
   }
 
   private getTimeString(): string {
