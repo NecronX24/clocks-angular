@@ -1,0 +1,23 @@
+<div class="time-input-container">
+  <input type="number" 
+         [(ngModel)]="hours" 
+         (change)="validateNumber($event, 23)"
+         min="0" max="23" 
+         class="time-input">
+  <span>:</span>
+  <input type="number" 
+         [(ngModel)]="minutes" 
+         (change)="validateNumber($event, 59)"
+         min="0" max="59" 
+         class="time-input">
+  <span>:</span>
+  <input type="number" 
+         [(ngModel)]="seconds" 
+         (change)="validateNumber($event, 59)"
+         min="0" max="59" 
+         class="time-input">
+  
+  <button (click)="toggleAutoUpdate()" class="update-button">
+    {{ isAutoUpdating ? 'Detener' : 'Actualizar' }}
+  </button>
+</div>
