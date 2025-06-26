@@ -23,7 +23,6 @@ export class TimeInputComponentTest {
   currentHour: string = '';
   currentMinute: string = '';
   currentSecond: string = '';
-  isUpdating: boolean = true;
 
   onTimeUpdate(time: string) {
     this.currentTime = time;
@@ -36,6 +35,5 @@ export class TimeInputComponentTest {
   }  
   onSecondUpdate(time: string) {
     this.currentSecond = time;
-    console.log(this.currentSecond);
   }
 }

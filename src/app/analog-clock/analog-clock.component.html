@@ -1,0 +1,10 @@
+<div class="clock">
+  <div class="hand hour" [style.transform]="'rotate(' + (getHourNumber() * 30 + (getMinuteNumber() / 2)) + 'deg)'"></div>
+  <div class="hand minute" [style.transform]="'rotate(' + (getMinuteNumber() * 6) + 'deg)'"></div>
+  <div class="hand second" [style.transform]="'rotate(' + (getSecondNumber() * 6) + 'deg)'"></div>
+</div>
+<app-time-input
+      (hourUpdated)="onHourUpdate($event)"
+      (minuteUpdated)="onMinuteUpdate($event)"
+      (secondUpdated)="onSecondUpdate($event)">
+  </app-time-input>
