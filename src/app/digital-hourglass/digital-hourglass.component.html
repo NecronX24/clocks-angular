@@ -1,0 +1,21 @@
+<div class="hourglass-container">
+  <div class="triangle-container">
+     <div class="triangle-border top">
+       <div class="triangle top">
+         <div class="sand top-sand" [style.height.%]="topFillPercentage"></div>
+       </div>
+     </div>
+    
+     <div class="triangle-border bottom">
+       <div class="triangle bottom">
+         <div *ngFor="let particle of particles" 
+          class="sand-particle"
+          [style.animationDelay]="particle.animationDelay"></div>
+         <div class="sand bottom-sand" [style.height.%]="bottomFillPercentage"></div>
+       </div>
+     </div>
+
+  </div>
+  
+  <div class="time-display">{{ currentTime }}</div>
+</div>
