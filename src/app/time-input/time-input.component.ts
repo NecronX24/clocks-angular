@@ -80,17 +80,59 @@ export class TimeInputComponent implements OnDestroy {
     return num < 10 ? `0${num}` : `${num}`;
   }
 
-  validateNumber(event: any, max: number): void {
-    const value = event.target.value;
-    if (value > max) {
-      event.target.value = max;
-      if (max === 23) this.hours = max;
-      else if (max === 59) this.minutes = max;
-    } else if (value < 0) {
-      event.target.value = 0;
-      if (max === 23) this.hours = 0;
-      else if (max === 59) this.minutes = 0;
+  validateHour(value:number):number{
+    let newNumber:number = 0;
+    if(value>23) newNumber=0;
+    else if (value<0) newNumber=23;
+    else newNumber = value;
+    this.hours = newNumber;
+    return newNumber;
+  }
+
+  validateMinute(value:number):number{
+    let newNumber:number = 0;
+    if(value>59){
+      newNumber=0;
+      this.validateHour(this.hours+1);
     }
+    else if (value<0){
+      newNumber=59;
+      this.validateHour(this.hours-1);
+    }
+    else newNumber = value;
+    this.minutes = newNumber;
+    return newNumber;
+  }
+
+  validateNumber(event: any, type:string): void {
+    const value = event.target.value;
+    let newNumber:number = 0;
+    if (type=='hours' && (value>23 || value<0)){
+      event.target.value = this.validateHour(value);
+    } else if(value>59 || value<0){
+      if(type=='seconds'){
+        if(value>59) {
+          newNumber=0;
+          this.validateMinute(this.minutes+1);
+        }
+        else if (value<0) {
+          newNumber=59;
+          this.validateMinute(this.minutes-1);
+        }
+        this.seconds = newNumber;
+      } else if (type=='minutes'){
+        if(value>59) {
+          newNumber=0;
+          this.validateHour(this.hours+1)
+        }
+        else if (value<0) {
+          newNumber=59;
+          this.validateHour(this.hours-1);
+        }
+        this.minutes = newNumber;
+      }
+      event.target.value = newNumber; 
+    } 
     this.updateTime();
   }
 }
