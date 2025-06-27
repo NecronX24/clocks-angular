@@ -1,0 +1,25 @@
+<div class="clock-container">
+  
+  <div class="sun"></div>
+  
+  <div class="orbit" style="width: 300px; height: 300px;"></div>
+  <div class="orbit" style="width: 200px; height: 200px;"></div>
+  <div class="orbit" style="width: 100px; height: 100px;"></div>
+
+  <div class="planet hour-planet" [ngStyle]="getPlanetPosition(hourAngle, 150)">
+      {{ currentHour }}
+    </div>
+    
+    <div class="planet minute-planet" [ngStyle]="getPlanetPosition(minuteAngle, 100)">
+    {{ currentMinute }}
+</div>
+
+  <div class="planet second-planet" [ngStyle]="getPlanetPosition(secondAngle, 50)">
+      {{ currentSecond }}
+    </div>
+</div>
+<app-time-input
+    (hourUpdated)="onHourUpdate($event)"
+    (minuteUpdated)="onMinuteUpdate($event)"
+    (secondUpdated)="onSecondUpdate($event)">
+</app-time-input>
