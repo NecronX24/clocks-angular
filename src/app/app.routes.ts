@@ -10,6 +10,7 @@ import { LoadingBarClockComponent } from './loading-bar-clock/loading-bar-clock.
 import { BinaryClockComponent } from './binary-clock/binary-clock.component';
 import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 import { SevenSegmentsClockComponent } from './seven-segments-clock/seven-segments-clock.component';
+import { TextClockComponent } from './text-clock/text-clock.component';
 
 export const routes: Routes =
 [
@@ -27,4 +28,5 @@ export const routes: Routes =
     {path: 'testDigital', component: DigitalClockComponent},
 
     {path: 'testSeven', component: SevenSegmentsClockComponent},
+    {path: 'testClock', component: TextClockComponent},
 ];

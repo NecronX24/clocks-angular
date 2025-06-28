@@ -1,0 +1,9 @@
+<div class="text-clock">
+  <div class="clock-text">
+    {{ getTextHour() }}
+  </div>
+
+</div>
+<app-time-input
+    (timeUpdated)="onTimeUpdate($event)">
+</app-time-input>
