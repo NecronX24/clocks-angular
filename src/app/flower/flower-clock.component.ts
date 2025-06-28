@@ -28,7 +28,7 @@ import { FlowerComponent } from "./flower.component";
     `
 })
 
-export class FLowerClockComponent {
+export class FlowerClockComponent {
     currentHour: number = 0;
     currentMinute: number = 0;
     currentSecond: number = 0;
