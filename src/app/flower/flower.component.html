@@ -1,0 +1,11 @@
+<div class="flower-container">
+  <div class="flower">
+    <div class="flower-center"></div>
+    <div
+      *ngFor="let petal of petals; let i = index"
+      class="petal"
+      [class.fallen]="i < fallenPetalsCount"
+      [style.transform]="getPetalTransform(i)"
+    ></div>
+  </div>
+</div>
