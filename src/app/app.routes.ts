@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { SessionComponent } from './session/session.component';
-import { TimeInputComponent } from './time-input/time-input.component';
 import { TimeInputComponentTest } from './time-input/time-input.component.specs';
 import { AnalogClockComponent } from './analog-clock/analog-clock.component';
 import { DigitalHourglassClockComponent } from './digital-hourglass/digital-hourglass-clock.component';
 import { StarClockComponent } from './star-clock/star-clock.component';
 import { RainbowCardClockComponent } from './rainbow-card/rainbow-card-clock.component';
-import { FLowerClockComponent } from './flower/flower-clock.component';
+import { FlowerClockComponent } from './flower/flower-clock.component';
+import { LoadingBarClockComponent } from './loading-bar-clock/loading-bar-clock.component';
 
 export const routes: Routes =
 [
@@ -16,5 +16,6 @@ export const routes: Routes =
     {path: 'testHourglass', component: DigitalHourglassClockComponent},
     {path: 'testStar', component: StarClockComponent},
     {path: 'testRainbow', component: RainbowCardClockComponent},
-    {path: 'test', component: FLowerClockComponent},
+    {path: 'testFlower', component: FlowerClockComponent},
+    {path: 'test', component: LoadingBarClockComponent},
 ];

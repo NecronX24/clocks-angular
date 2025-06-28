@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="label">Hora:</div>
+    <div class="bar-container">
+        <div class="bar-fill" [style.width.%]="getBarPercentage(currentHour, 24)"></div>
+    </div>
+
+    <div class="label">Minutos:</div>
+    <div class="bar-container">
+        <div class="bar-fill" [style.width.%]="getBarPercentage(currentMinute, 60)"></div>
+    </div>
+
+    <div class="label">Segundos:</div>
+    <div class="bar-container">
+        <div class="bar-fill" [style.width.%]="getBarPercentage(currentSecond, 60)"></div>
+    </div>
+</div>
+<app-time-input
+    (timeUpdated)="onTimeUpdate($event)">
+</app-time-input>
