@@ -1,0 +1,18 @@
+.container {
+    font-family: 'Menlo', monospace;
+    font-size: 3rem;
+    text-align: center;
+    color: #1f1f1f;
+    padding: 20px;
+    border-radius: 50%;
+    border-color: #1f1f1f;
+    border-width: 5px;
+    display: inline-block;
+    border-style: solid;
+    background-color: aliceblue;
+}
+
+h1{
+    height: auto;
+    margin: 0;
+}

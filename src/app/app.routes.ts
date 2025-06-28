@@ -8,6 +8,7 @@ import { RainbowCardClockComponent } from './rainbow-card/rainbow-card-clock.com
 import { FlowerClockComponent } from './flower/flower-clock.component';
 import { LoadingBarClockComponent } from './loading-bar-clock/loading-bar-clock.component';
 import { BinaryClockComponent } from './binary-clock/binary-clock.component';
+import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 
 export const routes: Routes =
 [
@@ -18,7 +19,9 @@ export const routes: Routes =
     {path: 'testHourglass', component: DigitalHourglassClockComponent},
     {path: 'testStar', component: StarClockComponent},
     {path: 'testRainbow', component: RainbowCardClockComponent},
+    
     {path: 'testFlower', component: FlowerClockComponent},
     {path: 'testLoading', component: LoadingBarClockComponent},
-    {path: 'test', component: BinaryClockComponent},
+    {path: 'testBinary', component: BinaryClockComponent},
+    {path: 'test', component: DigitalClockComponent},
 ];
