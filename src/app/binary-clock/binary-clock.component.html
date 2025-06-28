@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="binary-display">
+    <div class="binary-group">
+        <div class="binary-column">
+            <h2>H</h2>
+            <div *ngFor="let bit of convertToBinaryArray(currentTime[0],2); let i = index" class="binary-bit" [class.active]="bit === 1">
+              {{ [2, 1][i] || '' }}
+            </div>
+          </div>
+          <div class="binary-column">
+            <h2>H</h2>
+            <div *ngFor="let bit of convertToBinaryArray(currentTime[1],4); let i = index" class="binary-bit" [class.active]="bit === 1">
+              {{ [8, 4, 2, 1][i] || '' }}
+            </div>
+          </div>
+        </div>
+        <div class="binary-group">
+            <div class="binary-column">
+              <h2>M</h2>
+              <div *ngFor="let bit of convertToBinaryArray(currentTime[3],3); let i = index" class="binary-bit" [class.active]="bit === 1">
+                {{ [4, 2, 1][i] || '' }}
+              </div>
+            </div>
+            <div class="binary-column">
+                <h2>M</h2>
+              <div *ngFor="let bit of convertToBinaryArray(currentTime[4],4); let i = index" class="binary-bit" [class.active]="bit === 1">
+                {{ [8, 4, 2, 1][i] || '' }}
+              </div>
+            </div>
+
+        </div>
+  <div class="binary-group">
+      <div class="binary-column">
+        <h2>S</h2>
+        <div *ngFor="let bit of convertToBinaryArray(currentTime[6],3); let i = index" class="binary-bit" [class.active]="bit === 1">
+          {{ [4, 2, 1][i] || '' }}
+        </div>
+      </div>
+      <div class="binary-column">
+        <h2>S</h2>
+        <div *ngFor="let bit of convertToBinaryArray(currentTime[7],4); let i = index" class="binary-bit" [class.active]="bit === 1">
+          {{ [8, 4, 2, 1][i] || '' }}
+        </div>
+      </div>
+  </div>
+  </div>
+  <app-time-input
+    (timeUpdated)="onTimeUpdate($event)">
+    </app-time-input>
+</div>
