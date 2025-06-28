@@ -1,0 +1,12 @@
+<div class="card-container">
+  <div 
+    *ngFor="let card of cards; let i = index" 
+    class="card" 
+    [class.hidden]="i < cardCount"
+    [style.transform]="'rotate(' + (i * cardAngle) + 'deg)'"
+    [style.--card-color]="getCardColor(i)"
+  >
+    <div class="card-inner"></div>
+  </div>
+  <div class="center-circle"></div>
+</div>
