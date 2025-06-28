@@ -41,9 +41,9 @@ export class RainbowCardComponent implements OnInit, OnDestroy, OnChanges {
   updateCards() {
     let calculateCards: number = 0;
     
-    if (this.cardAngle === 6) {
-      calculateCards = Math.min(parseInt(this.currentTime) % 12, 12);
-    } else if (this.cardAngle ===15) {
+    if (this.cardAngle === 15) {
+      calculateCards = Math.min(parseInt(this.currentTime) % 24, 24);
+    } else if (this.cardAngle ===6) {
       calculateCards = Math.min(parseInt(this.currentTime), 60);
     }
     this.cardCount = this.cards.length - calculateCards;
