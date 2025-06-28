@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="digit">{{currentHour[0]}}</h1>
+    <h1 class="digit">{{currentHour[1]}}</h1>
+    <h1 [class.blinking]="blinking">:</h1>
+    <h1 class="digit">{{currentTime[3]}}</h1>
+    <h1 class="digit">{{currentTime[4]}}</h1>
+    <h1 [class.blinking]="blinking">:</h1>
+    <h1 class="digit">{{currentTime[6]}}</h1>
+    <h1 class="digit">{{currentTime[7]}}</h1>
+    <h3 class="suffix" [class.blinking]="blinking">{{currentSuffix}}</h3>
+</div>
+<app-time-input
+    (timeUpdated)="onTimeUpdate($event)">
+</app-time-input>

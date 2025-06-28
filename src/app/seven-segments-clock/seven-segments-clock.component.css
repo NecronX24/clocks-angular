@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: url('/assets/digital-7.ttf');
+}
+
+.container {
+  font-family: 'Digital-7', monospace;
+  font-size: 4rem;
+  color: #ff0000;
+  text-shadow: 0 0 5px #f00, 0 0 10px rgba(255, 0, 0, 0.5);
+  display: inline-flex;
+  gap: 5px;
+  background-color: #333;
+  padding: 10px;
+  align-items: center;
+  border-radius: 20px;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.digit {
+  display: inline-block;
+  min-width: 1ch;
+  text-align: center;
+}
+h1{
+    margin: 0;
+}
+
+.suffix{
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    width: 71px;
+}
+
+.blinking{
+    opacity: 0;
+}

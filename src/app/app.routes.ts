@@ -9,6 +9,7 @@ import { FlowerClockComponent } from './flower/flower-clock.component';
 import { LoadingBarClockComponent } from './loading-bar-clock/loading-bar-clock.component';
 import { BinaryClockComponent } from './binary-clock/binary-clock.component';
 import { DigitalClockComponent } from './digital-clock/digital-clock.component';
+import { SevenSegmentsClockComponent } from './seven-segments-clock/seven-segments-clock.component';
 
 export const routes: Routes =
 [
@@ -19,9 +20,11 @@ export const routes: Routes =
     {path: 'testHourglass', component: DigitalHourglassClockComponent},
     {path: 'testStar', component: StarClockComponent},
     {path: 'testRainbow', component: RainbowCardClockComponent},
-    
+
     {path: 'testFlower', component: FlowerClockComponent},
     {path: 'testLoading', component: LoadingBarClockComponent},
     {path: 'testBinary', component: BinaryClockComponent},
-    {path: 'test', component: DigitalClockComponent},
+    {path: 'testDigital', component: DigitalClockComponent},
+
+    {path: 'testSeven', component: SevenSegmentsClockComponent},
 ];
