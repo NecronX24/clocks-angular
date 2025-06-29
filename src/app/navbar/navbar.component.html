@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a routerLink="/" class="nav-link">Página de Sesión</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/clocks" class="nav-link">Relojes</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="removeUser()" class="nav-link">Cerrar Sesión</a>
+    </li>
+    <li class="nav-item">
+      <a> Bienvenido {{verifyUser()}}!</a>
+    </li>
+  </ul>
+</nav>
