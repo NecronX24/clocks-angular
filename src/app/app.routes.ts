@@ -11,10 +11,12 @@ import { BinaryClockComponent } from './binary-clock/binary-clock.component';
 import { DigitalClockComponent } from './digital-clock/digital-clock.component';
 import { SevenSegmentsClockComponent } from './seven-segments-clock/seven-segments-clock.component';
 import { TextClockComponent } from './text-clock/text-clock.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes =
 [
-    {path: '', component: SessionComponent},
+    {path: '', component: HomeComponent},
+    {path: 'session', component: SessionComponent},
     {path: 'testInput', component: TimeInputComponentTest},
 
     {path: 'testAnalog', component: AnalogClockComponent},
