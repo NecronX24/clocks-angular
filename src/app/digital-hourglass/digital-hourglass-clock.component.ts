@@ -14,11 +14,13 @@ import { FormsModule } from '@angular/forms';
       <app-digital-hourglass [currentTime]="currentMinute" [maxValue]="60"/>
       <app-digital-hourglass [currentTime]="currentSecond" [maxValue]="60"/>
     </div>
-    <app-time-input
-        (hourUpdated)="onHourUpdate($event)"
-        (minuteUpdated)="onMinuteUpdate($event)"
-        (secondUpdated)="onSecondUpdate($event)">
-    </app-time-input>
+    <div class="time-container">
+      <app-time-input
+          (hourUpdated)="onHourUpdate($event)"
+          (minuteUpdated)="onMinuteUpdate($event)"
+          (secondUpdated)="onSecondUpdate($event)">
+      </app-time-input>
+    </div>
   `,
   styles:[`
     .clock-container {
@@ -26,6 +28,12 @@ import { FormsModule } from '@angular/forms';
         flex-direction: row;
         align-items: center;
         gap: 20px;
+    }
+
+    .time-container{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
     }
     `]
 })

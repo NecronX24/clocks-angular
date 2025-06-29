@@ -1,6 +1,8 @@
-<div class="container">
+<div class="clock">
     <h1>{{currentTime}}</h1>
 </div>
-<app-time-input
+<div class="container">
+    <app-time-input
         (timeUpdated)="onTimeUpdate($event)">
     </app-time-input>
+</div>

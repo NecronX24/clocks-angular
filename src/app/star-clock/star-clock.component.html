@@ -18,8 +18,10 @@
       {{ currentSecond }}
     </div>
 </div>
-<app-time-input
-    (hourUpdated)="onHourUpdate($event)"
-    (minuteUpdated)="onMinuteUpdate($event)"
-    (secondUpdated)="onSecondUpdate($event)">
-</app-time-input>
+<div class="time-container">
+  <app-time-input
+      (hourUpdated)="onHourUpdate($event)"
+      (minuteUpdated)="onMinuteUpdate($event)"
+      (secondUpdated)="onSecondUpdate($event)">
+  </app-time-input>
+</div>

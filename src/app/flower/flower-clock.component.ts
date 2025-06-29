@@ -13,10 +13,12 @@ import { FlowerComponent } from "./flower.component";
             <app-flower [petalsMode]=60 [value]="currentMinute"/>
             <app-flower [petalsMode]=60 [value]="currentSecond"/>
         </div>
-        <app-time-input
-            (hourUpdated)="onHourUpdate($event)"
-            (minuteUpdated)="onMinuteUpdate($event)"
-            (secondUpdated)="onSecondUpdate($event)"/>
+        <div class="time-container">
+            <app-time-input
+                (hourUpdated)="onHourUpdate($event)"
+                (minuteUpdated)="onMinuteUpdate($event)"
+                (secondUpdated)="onSecondUpdate($event)"/>
+        </div>
     `,
     styles:`
         .clock-container{
@@ -25,6 +27,11 @@ import { FlowerComponent } from "./flower.component";
             justify-content: center;
             align-items: center;
         }
+            .time-container{
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
     `
 })
 

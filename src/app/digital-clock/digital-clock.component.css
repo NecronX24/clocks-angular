@@ -1,4 +1,9 @@
-.container {
+.container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.clock {
     font-family: 'Menlo', monospace;
     font-size: 3rem;
     text-align: center;

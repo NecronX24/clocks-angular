@@ -5,6 +5,12 @@
   background-color: #0c021d;
 }
 
+.time-container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .sun {
   position: absolute;
   top: 50%;

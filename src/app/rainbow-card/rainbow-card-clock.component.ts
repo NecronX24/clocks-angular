@@ -13,11 +13,13 @@ import { RainbowCardComponent } from "./rainbow-card.component";
             <app-rainbow-card [cardAngle]="6" [currentTime]="currentMinute"/>
             <app-rainbow-card [cardAngle]="6" [currentTime]="currentSecond"/>
         </div>
-        <app-time-input
-            (hourUpdated)="onHourUpdate($event)"
-            (minuteUpdated)="onMinuteUpdate($event)"
-            (secondUpdated)="onSecondUpdate($event)">
-        </app-time-input>
+        <div class="time-container">
+            <app-time-input
+                (hourUpdated)="onHourUpdate($event)"
+                (minuteUpdated)="onMinuteUpdate($event)"
+                (secondUpdated)="onSecondUpdate($event)">
+            </app-time-input>
+        </div>
     `,
     styles:[`
         .clock-container{
@@ -25,6 +27,11 @@ import { RainbowCardComponent } from "./rainbow-card.component";
             flex-direction: row;
             justify-content: center;
             align-items: center;
+        }
+        .time-container{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
         }
     `]
 })

@@ -9,6 +9,8 @@
     <h1 class="digit">{{currentTime[7]}}</h1>
     <h3 class="suffix" [class.blinking]="blinking">{{currentSuffix}}</h3>
 </div>
-<app-time-input
-    (timeUpdated)="onTimeUpdate($event)">
-</app-time-input>
+<div class="time-container">
+    <app-time-input
+        (timeUpdated)="onTimeUpdate($event)">
+    </app-time-input>
+</div>
