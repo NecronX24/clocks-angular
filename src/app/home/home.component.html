@@ -1,42 +1,51 @@
 <div class="container">
-    <div class="clock-container">
-        <h1>Reloj analógico</h1>
-        <app-analog-clock></app-analog-clock>
+    <div class="slideshow-container">
+        <div class="clock-container" *ngIf="currentSlide === 0">
+            <h1>Reloj analógico</h1>
+            <app-analog-clock></app-analog-clock>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 1">
+            <h1>Reloj Binario</h1>
+            <app-binary-clock/>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 2">
+            <h1>Reloj Digital</h1>
+            <app-digital-clock/>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 3">
+            <h1>Reloj de Arena</h1>
+            <app-digital-hourglass-clock></app-digital-hourglass-clock>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 4">
+            <h1>Reloj de flores</h1>
+            <app-flower-clock/>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 5">
+            <h1>Reloj de barra de carga</h1>
+            <app-loading-bar-clock/>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 6">
+            <h1>Reloj de cartas</h1>
+            <app-rainbow-card-clock/>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 7">
+            <h1>Reloj de 7 segmentos</h1>
+            <app-seven-segments-clock/>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 8">
+            <h1>Reloj basado en órbitas</h1>
+            <app-star-clock/>
+        </div>
+        <div class="clock-container" *ngIf="currentSlide === 9">
+            <h1>Reloj de texto escrito</h1>
+            <app-text-clock/>
+        </div>
+
+        <a class="prev" (click)="prevSlide()">&#10094;</a>
+        <a class="next" (click)="nextSlide()">&#10095;</a>
     </div>
-    <div class="clock-container">
-        <h1>Reloj Binario</h1>
-        <app-binary-clock/>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj Digital</h1>
-        <app-digital-clock/>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj de Arena</h1>
-        <app-digital-hourglass-clock></app-digital-hourglass-clock>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj de flores</h1>
-        <app-flower-clock/>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj de barra de carga</h1>
-        <app-loading-bar-clock/>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj de cartas</h1>
-        <app-rainbow-card-clock/>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj de 7 segmentos</h1>
-        <app-seven-segments-clock/>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj basado en órbitas</h1>
-        <app-star-clock/>
-    </div>
-    <div class="clock-container">
-        <h1>Reloj de texto escrito</h1>
-        <app-text-clock/>
+
+    <div style="text-align:center">
+        <span class="dot" *ngFor="let clock of totalSlides; let i = index" [class.active]="currentSlide === i" (click)="goToSlide(i)"></span>
     </div>
 </div>
