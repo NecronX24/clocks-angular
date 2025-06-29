@@ -53,7 +53,7 @@ export class SessionComponent {
       next: (response) => {
         console.log('Login exitoso')
         localStorage.setItem('user',this.data[0]);
-        this.router.navigate(['/'])
+        this.router.navigate(['/clocks'])
       },
       error: () => alert('Datos inválidos o no existentes')
     }) 
@@ -62,7 +62,7 @@ export class SessionComponent {
       next: (response) => {
         console.log('Registro exitoso')
         localStorage.setItem('user',this.data[0]);
-        this.router.navigate(['/'])
+        this.router.navigate(['/clocks'])
       },
       error: () => alert('Las contraseñas no coinciden')
     }) 

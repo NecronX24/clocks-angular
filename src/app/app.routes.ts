@@ -15,8 +15,8 @@ import { HomeComponent } from './home/home.component';
 
 export const routes: Routes =
 [
-    {path: '', component: HomeComponent},
-    {path: 'session', component: SessionComponent},
+    {path: '', component: SessionComponent},
+    {path: 'clocks', component: HomeComponent},
     {path: 'testInput', component: TimeInputComponentTest},
 
     {path: 'testAnalog', component: AnalogClockComponent},
