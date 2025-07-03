@@ -9,11 +9,11 @@ import { RainbowCardClockComponent } from "../rainbow-card/rainbow-card-clock.co
 import { SevenSegmentsClockComponent } from "../seven-segments-clock/seven-segments-clock.component";
 import { StarClockComponent } from "../star-clock/star-clock.component";
 import { TextClockComponent } from "../text-clock/text-clock.component";
-import { NgIf, NgFor } from '@angular/common'; // Import NgIf and NgFor
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  standalone: true, // If your component is not standalone, remove this line.
+  standalone: true,
   imports: [
     AnalogClockComponent,
     BinaryClockComponent,
@@ -25,15 +25,15 @@ import { NgIf, NgFor } from '@angular/common'; // Import NgIf and NgFor
     SevenSegmentsClockComponent,
     StarClockComponent,
     TextClockComponent,
-    NgIf, // Add NgIf to imports
-    NgFor // Add NgFor to imports
+    NgIf,
+    NgFor
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   currentSlide: number = 0;
-  totalSlides: number[] = Array(10).fill(0); // Assuming you have 10 clock components
+  totalSlides: number[] = Array(10).fill(0);
 
   prevSlide() {
     this.currentSlide = (this.currentSlide - 1 + this.totalSlides.length) % this.totalSlides.length;
