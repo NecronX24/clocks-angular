@@ -26,6 +26,10 @@ export class TimeInputComponent implements OnDestroy {
     this.startAutoUpdate();
   }
 
+  ngOnInit(){
+    this.updateCurrentTime();
+  }
+
   ngOnDestroy(): void {
     this.stopAutoUpdate();
   }
