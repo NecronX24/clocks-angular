@@ -49,7 +49,7 @@ h1{
 
 .card.hidden {
   transform: translateY(150px) rotate(var(--rotate-angle)) !important;
-  opacity: 0.1;
+  opacity: 0;
 }
 
 .card.hidden .card-inner {
