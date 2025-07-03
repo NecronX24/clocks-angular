@@ -14,6 +14,7 @@ export class RainbowCardComponent implements OnInit, OnDestroy, OnChanges {
   cardCount: number = 0;
   cards: number[] = [];
   private intervalId: any;
+  @Input() isBalatro:boolean = false;
 
   ngOnInit() {
     this.initializeCards();

@@ -1,13 +1,23 @@
 <div class="card-container">
-  <div 
-    *ngFor="let card of cards; let i = index" 
-    class="card" 
-    [class.hidden]="i < cardCount"
-    [style.transform]="'rotate(' + (i * cardAngle) + 'deg)'"
-    [style.--card-color]="getCardColor(i)"
-  >
-    <div class="card-inner"></div>
-  </div>
+  @if (!isBalatro) {
+    <div 
+      *ngFor="let card of cards; let i = index" 
+      class="card" 
+      [class.hidden]="i < cardCount"
+      [style.transform]="'rotate(' + (i * cardAngle) + 'deg)'"
+      [style.--card-color]="getCardColor(i)"
+    >
+      <div class="card-inner"></div>
+    </div>
+  }
+  @else{
+      <img src="assets/balatro.png"
+      *ngFor="let card of cards; let i = index" 
+      class="card balatro"
+      [class.hidden]="i < cardCount"
+      [style.transform]="'rotate(' + (i * cardAngle) + 'deg)'"
+      />
+  }
   <div class="center-circle"></div>
 </div>
 <h1>{{currentTime}}</h1>
