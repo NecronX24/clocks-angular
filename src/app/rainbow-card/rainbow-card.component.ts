@@ -13,6 +13,7 @@ export class RainbowCardComponent implements OnInit, OnDestroy, OnChanges {
   @Input() cardAngle: number = 15; // 360/12 para horas
   cardCount: number = 0;
   cards: number[] = [];
+  balatroCards:string[] = [];
   private intervalId: any;
   @Input() isBalatro:boolean = false;
 
@@ -30,6 +31,10 @@ export class RainbowCardComponent implements OnInit, OnDestroy, OnChanges {
   initializeCards() {
     const count = this.cardAngle === 15 ? 24 : 60;
     this.cards = Array(count).fill(0);
+    for (let i=0; i<59; i++){
+      if ( i < 10) this.balatroCards[i] = `assets/Jokers/Joker${Math.floor(Math.random() * 79) + 1}.png`;
+      else this.balatroCards[i] = this.balatroCards[Math.floor(Math.random() * 9)];
+    }
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -55,3 +60,17 @@ export class RainbowCardComponent implements OnInit, OnDestroy, OnChanges {
     return `hsl(${hue}, 80%, 70%)`;
   }
 }
+
+/*
+CODIGO EN BATCH PARA CAMBIAR NOMBRE DE LAS CARTAS
+@echo off
+setlocal enabledelayedexpansion
+set /A counter=1
+pause
+for %%f in ("src\assets\Jokers\*") do (
+    echo "!counter!"
+    ren "%%f" "Joker!counter!.png"
+    set /A counter+=1
+)
+pause
+*/

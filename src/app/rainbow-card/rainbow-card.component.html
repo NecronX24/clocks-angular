@@ -11,7 +11,7 @@
     </div>
   }
   @else{
-      <img src="assets/balatro.png"
+      <img [src]="balatroCards[i-1]"
       *ngFor="let card of cards; let i = index" 
       class="card balatro"
       [class.hidden]="i < cardCount"
